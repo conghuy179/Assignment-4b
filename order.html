@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/order.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phan Cong Huy's Hot Cake Blog</title>
+</head>
+
+<body>
+    <header>
+        <div id="welcomeDiv">
+            <h1>WELCOME TO HUYS CAKE BLOG!</h1>
+        </div>
+    </header>
+    <ul>
+        <li>
+            <a href="index.html" title="homepage">Home</a></li>
+        <li class="parent">Products
+            <ol class="child">
+                <li><a href="details-1.html" title="Coconut bundt cake">The Amazing Coconut Bundt Cake</a></li>
+                <li><a href="details-2.html" title="German Chocolate cake">The Stunning German Chocolate cake</a></li>
+                <li><a href="details-3.html" title="Cream Cheese Pound Cake">The Great Cream Cheese Pound Cake</a></li>
+                <li> <a href="details-4.html" title=" Classic Yellow Cake">The Breath-taking Classic Yellow Cake</a></li>
+            </ol>
+        </li>
+        <li>
+            <a href="order.html" title="Order">Order</a>
+        </li>
+        <li>
+            <a href="contact.html" title="Contact ">Contact</a>
+        </li>
+        <li>
+            <a href="about.html" title="About">About</a>
+        </li>
+    </ul>
+    <main>
+        <form action="">
+
+            <label for="cake">Cake Name</label>
+            <select id="cake" name="cake">
+                <option value="Select cake">---Select cake---</option>
+                <option value="Classic Yellow Cake">Classic Yellow Cake</option>
+                <option value="Coconut Bundt Cake">Coconut Bundt Cake</option>
+                <option value="Cream Cheese Pound Cake">Cream Cheese Pound Cake</option>
+                <option value="German Chocolate Cake">German Chocolate Cake</option>
+              </select>
+            <br>
+            <br>
+            <label for="name">Your Name</label>
+            <input type="name" name="name" id="name">
+
+            <label for="word">Message</label>
+
+            <input type="text" name="message" id="message">
+
+            <label for="extra"> Includes:</label>
+            <br>
+            <label>Candle<input type="number" min="0" max="100" name="addition" value="candle"></label>
+            <label>Firework<input type="number" min="0" max="100" name="addition" value="firework"> </label>
+            <label>Toys<input type="number" min="0" max="100" name="addition" value="toys"> </label>
+
+            <label for="date"> Deliver Date</label>
+
+            <input type="date" name="date" id="deliverDate"><br>
+
+            <label for="address"> Deliver to</label>
+
+            <textarea name="message" cols="40" rows="5" type="text" name="deliverTo" id="deliverTo"></textarea>
+            <br>
+
+            <label for="callBeforeDeliver"> Call before deliver?</label>
+            <br>
+            <input type="radio" name="callBeforeDeliver" value="callBeforeDeliver">Yes
+            <br>
+            <input type="radio" name="callBeforeDeliver" value="callBeforeDeliver" checked>No
+            <br>
+            <br>
+            <form action="/action_page.php" method="post" onsubmit="submitorder()">
+                <input type="submit" value="Order now" onclick="validate()">
+
+                <script>
+                    // Cake name input validation
+                    function validateCakeInput() {
+                        const cakeInput = document.getElementById("cake");
+                        // khong chon san pham vao truong Cake name thi thong bao loi
+                        if (cakeInput.value === '') {
+                            cakeInput.setCustomValidity('Please select our product.');
+                        } // nhap dung du lieu vao truong Cake name
+                        else {
+                            cakeInput.setCustomValidity('');
+                        }
+                    }
+                    // Your name input validation
+                    function validateYourNameInput() {
+                        const yourNameInput = document.getElementById('name');
+                        // khong nhap ten vao truong Your Name
+                        if (yourNameInput.value === '') {
+                            nameInput.setCustomValidity('Please fill out your name.');
+                        } // nhap vao truong Your name qua 100 ki tu 
+                        else if (yourNameInput.value.length > 100) {
+                            nameInput.setCustomValidity('Your name should not exceed 100 characters.');
+                        } // nhap dung du lieu vao truong name 
+                        else {
+                            yourNameInput.setCustomValidity('');
+                        }
+                    }
+                    // Message input validation
+                    function validateMessageInput() {
+                        const messageInput = document.getElementById('message');
+                        // nhap vao truong Your name qua 100 ki tu
+                        if (messageInput.value.length > 30) {
+                            messageInput.setCustomValidity('Message should not exceed 30 characters.');
+                        }
+                        // nhap dung du lieu vao truong name 
+                        else {
+                            messageInput.setCustomValidity('');
+                        }
+                    }
+                    // Deliver Date input validation
+                    function validateDeliverDateInput() {
+                        const deliverDateInput = document.getElementById('deliverDate');
+                        // khong nhap du lieu vao truong Deliver date
+                        if (deliverDateInput.value === '') {
+                            deliverDateInput.setCustomValidity('Please fill out the deliver date.');
+                        } // nhap dung du lieu vao truong Deliver date 
+                        else {
+                            deliverDateInput.setCustomValidity('');
+                        }
+                    }
+                    // Deliver to input validation
+                    function validateDeliverToInput() {
+                        const deliverToInput = document.getElementById('deliverTo');
+                        // khong nhap du lieu vao truong Deliver to
+                        if (deliverToInput.value === '') {
+                            deliverToInput.setCustomValidity('Please fill out the address.');
+                        } // nhap truong deliver to qua 500 ki tu 
+                        else if (deliverToInput.value.length > 500) {
+                            deliverToInput.setCustomValidity('Address should not exceed 500 characters.')
+                        }
+                        // nhap dung du lieu vao truong Deliver to 
+                        else {
+                            deliverDateInput.setCustomValidity('');
+                        }
+                    }
+                    // Nhieu truong du lieu phat sinh loi o tren
+                    function validate() {
+                        validateCakeInput();
+                        validateYourNameInput();
+                        validateMessageInput();
+                        validateDeliverDateInput;
+                        validateDeliverToInput();
+                    }
+                    // $(function() {
+                    //     var dtToday = new Date();
+
+                    //     var month = dtToday.getMonth() + 1;
+                    //     var day = dtToday.getDate();
+                    //     var year = dtToday.getFullYear();
+                    //     if (month < 10)
+                    //         month = '0' + month.toString();
+                    //     if (day < 10)
+                    //         day = '0' + day.toString();
+
+                    //     var maxDate = year + '-' + month + '-' + day;
+                    //     alert(maxDate);
+                    //     $('#txtDate').attr('min', maxDate);
+                    // });
+                </script>
+
+            </form>
+    </main>
+    <footer>&copy;2022 by Huy's cake</footer>
+</body>
