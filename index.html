@@ -4,9 +4,9 @@
 
     <link rel="stylesheet" href="CSS/style.css">
     <meta charset="UTF-8 ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phan Cong Huy's Hot Cake Blog</title>
-
 </head>
 
 <body>
@@ -15,31 +15,82 @@
             <h1>WELCOME TO HUYS CAKE BLOG!</h1>
         </div>
     </header>
-    <div class="container-fluid">
-        <div class="menu" id="menu">
-            <ul>
-                <li>
-                    <a href="index.html" title="homepage">Home</a></li>
-                <li class="parent"> Products
-                    <ol class="child">
-                        <li><a href="details-1.html" title="Coconut bundt cake">The Amazing Coconut Bundt Cake</a></li>
-                        <li><a href="details-2.html" title="German Chocolate cake">The Stunning German Chocolate cake</a></li>
-                        <li><a href="details-3.html" title="Cream Cheese Pound Cake">The Great Cream Cheese Pound Cake</a></li>
-                        <li><a href="details-4.html" title="Classic Yellow Cake">The Breath-taking Classic Yellow Cake</a></li>
-                    </ol>
-                </li>
-                <li>
-                    <a href="order.html" title="Order">Order</a>
-                </li>
-                <li>
-                    <a href="contact.html" title="Contact">Contact</a>
-                </li>
-                <li>
-                    <a href="about.html" title="About">About</a>
-                </li>
-            </ul>
-        </div>
+    <!-- MENU for mobile version -->
+    <div class="icon" id="icon">
+        <img src="images/menu-button-of-three-horizontal-lines.png" id="menuIcon" width="50" height="50">
     </div>
+    <div id="sideNav">
+        <ul class="menuSelection">
+            <li>
+                <a href="index.html" title="homepage" id="home">Home</a></li>
+            <li class="parent"> Products
+                <ol class="child">
+                    <li><a href="details-1.html" title="Coconut bundt cake">The Amazing Coconut Bundt Cake</a></li>
+                    <li><a href="details-2.html" title="German Chocolate cake">The Stunning German Chocolate cake</a></li>
+                    <li><a href="details-3.html" title="Cream Cheese Pound Cake">The Great Cream Cheese Pound Cake</a></li>
+                    <li><a href="details-4.html" title="Classic Yellow Cake">The Breath-taking Classic Yellow Cake</a></li>
+                </ol>
+            </li>
+            <li>
+                <a href="order.html" title="Order">Order</a>
+            </li>
+            <li>
+                <a href="contact.html" title="Contact">Contact</a>
+            </li>
+            <li>
+                <a href="about.html" title="About">About</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Jv to toggle the mobile menu -->
+    <script>
+        var icon = document.getElementById("icon")
+        var sideNav = document.getElementById("sideNav")
+        var icon = document.getElementById("icon")
+
+        icon.onclick = function() {
+            if (sideNav.style.left == "-2200px") {
+                sideNav.style.left = "0";
+            } else {
+                sideNav.style.left = "-2200px";
+            }
+        }
+    </script>
+    <!-- MENU for desktop version -->
+    <div class="menu" id="menuTopnav">
+        <ul>
+            <li>
+                <a href="index.html" title="homepage" id="home">Home</a></li>
+            <li class="parent"> Products
+                <ol class="child">
+                    <li><a href="details-1.html" title="Coconut bundt cake">The Amazing Coconut Bundt Cake</a></li>
+                    <li><a href="details-2.html" title="German Chocolate cake">The Stunning German Chocolate cake</a></li>
+                    <li><a href="details-3.html" title="Cream Cheese Pound Cake">The Great Cream Cheese Pound Cake</a></li>
+                    <li><a href="details-4.html" title="Classic Yellow Cake">The Breath-taking Classic Yellow Cake</a></li>
+                </ol>
+            </li>
+            <li>
+                <a href="order.html" title="Order">Order</a>
+            </li>
+            <li>
+                <a href="contact.html" title="Contact">Contact</a>
+            </li>
+            <li>
+                <a href="about.html" title="About">About</a>
+            </li>
+        </ul>
+    </div>
+    <!-- <script>
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+        function myFunction() {
+            var x = document.getElementById("menuTopnav");
+            if (x.className === "menu") {
+                x.className += " responsive";
+            } else {
+                x.className = "menu";
+            }
+        }
+    </script> -->
 
     <main>
         <div class="container-fluid">
