@@ -2,39 +2,60 @@
 
 
 <head>
-    <meta charset="UTF-8">
+
     <link rel="stylesheet" href="CSS/order.css">
+    <meta charset="UTF-8 ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phan Cong Huy's Hot Cake Blog</title>
 </head>
 
 <body>
     <header>
-        <div id="welcomeDiv">
+        <div class="header" id="welcomeDiv">
             <h1>WELCOME TO HUYS CAKE BLOG!</h1>
         </div>
     </header>
-    <ul>
-        <li>
-            <a href="index.html" title="homepage">Home</a></li>
-        <li class="parent">Products
-            <ol class="child">
-                <li><a href="details-1.html" title="Coconut bundt cake">The Amazing Coconut Bundt Cake</a></li>
-                <li><a href="details-2.html" title="German Chocolate cake">The Stunning German Chocolate cake</a></li>
-                <li><a href="details-3.html" title="Cream Cheese Pound Cake">The Great Cream Cheese Pound Cake</a></li>
-                <li> <a href="details-4.html" title=" Classic Yellow Cake">The Breath-taking Classic Yellow Cake</a></li>
-            </ol>
-        </li>
-        <li>
-            <a href="order.html" title="Order">Order</a>
-        </li>
-        <li>
-            <a href="contact.html" title="Contact ">Contact</a>
-        </li>
-        <li>
-            <a href="about.html" title="About">About</a>
-        </li>
-    </ul>
+
+    <!-- MENU for desktop version -->
+    <div class="menu" id="menuTopnav">
+        <ul>
+            <li>
+                <a href="index.html" title="homepage" id="home">Home</a></li>
+            <li class="parent"> Products
+                <ol class="child">
+                    <li><a href="details-1.html" title="Coconut bundt cake">The Amazing Coconut Bundt Cake</a></li>
+                    <li><a href="details-2.html" title="German Chocolate cake">The Stunning German Chocolate cake</a></li>
+                    <li><a href="details-3.html" title="Cream Cheese Pound Cake">The Great Cream Cheese Pound Cake</a></li>
+                    <li><a href="details-4.html" title="Classic Yellow Cake">The Breath-taking Classic Yellow Cake</a></li>
+                </ol>
+            </li>
+            <li>
+                <a href="order.html" title="Order">Order</a>
+            </li>
+            <li>
+                <a href="contact.html" title="Contact">Contact</a>
+            </li>
+            <li>
+                <a href="about.html" title="About">About</a>
+            </li>
+            <li class="liMenu">
+                <img src="images/menu-button-of-three-horizontal-lines.png" class="iconMenu" onclick="myFunction()" width="50px" height="50px"></a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+        function myFunction() {
+            var x = document.getElementById("menuTopnav");
+            if (x.className === "menu") {
+                x.className += " responsive";
+            } else {
+                x.className = "menu";
+            }
+        }
+        // Exit menu when clicking outside CANNOT PERFORMANCE
+    </script>
     <main>
         <form action="">
 
@@ -98,10 +119,10 @@
                         // khong nhap ten vao truong Your Name
                         if (yourNameInput.value === '') {
                             nameInput.setCustomValidity('Please fill out your name.');
-                        } // nhap vao truong Your name qua 100 ki tu 
+                        } // nhap vao truong Your name qua 100 ki tu
                         else if (yourNameInput.value.length > 100) {
                             nameInput.setCustomValidity('Your name should not exceed 100 characters.');
-                        } // nhap dung du lieu vao truong name 
+                        } // nhap dung du lieu vao truong name
                         else {
                             yourNameInput.setCustomValidity('');
                         }
@@ -113,7 +134,7 @@
                         if (messageInput.value.length > 30) {
                             messageInput.setCustomValidity('Message should not exceed 30 characters.');
                         }
-                        // nhap dung du lieu vao truong name 
+                        // nhap dung du lieu vao truong name
                         else {
                             messageInput.setCustomValidity('');
                         }
@@ -124,7 +145,7 @@
                         // khong nhap du lieu vao truong Deliver date
                         if (deliverDateInput.value === '') {
                             deliverDateInput.setCustomValidity('Please fill out the deliver date.');
-                        } // nhap dung du lieu vao truong Deliver date 
+                        } // nhap dung du lieu vao truong Deliver date
                         else {
                             deliverDateInput.setCustomValidity('');
                         }
@@ -135,11 +156,11 @@
                         // khong nhap du lieu vao truong Deliver to
                         if (deliverToInput.value === '') {
                             deliverToInput.setCustomValidity('Please fill out the address.');
-                        } // nhap truong deliver to qua 500 ki tu 
+                        } // nhap truong deliver to qua 500 ki tu
                         else if (deliverToInput.value.length > 500) {
                             deliverToInput.setCustomValidity('Address should not exceed 500 characters.')
                         }
-                        // nhap dung du lieu vao truong Deliver to 
+                        // nhap dung du lieu vao truong Deliver to
                         else {
                             deliverDateInput.setCustomValidity('');
                         }
