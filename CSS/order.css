@@ -311,8 +311,8 @@ li {
     text-align: center;
 }
 
-.menu.liMenu {
-    display: none;
+li.liMenu {
+    display: block;
 }
 
 @media only screen and (min-width: 768px) {
@@ -383,6 +383,9 @@ li {
     .menuSelection>li {
         display: block;
     }
+    li.liMenu {
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -420,6 +423,7 @@ li {
         text-align: inherit;
         margin: 10% 10%;
         padding: 25px;
+        color: #333;
     }
     .main {
         width: 100%;
